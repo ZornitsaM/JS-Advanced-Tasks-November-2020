@@ -1,0 +1,111 @@
+function solve(){
+
+    let sections = document.querySelectorAll('section');
+
+    let openDiv = sections.item(1).querySelectorAll('div').item(1);
+    let progressDiv = sections.item(2).querySelectorAll('div').item(1);
+    let finishedDiv = sections.item(3).querySelectorAll('div').item(1);
+
+    let inputField = document.getElementById('task');
+    let descField = document.getElementById('description');
+    let dateField = document.getElementById('date');
+
+
+    document.getElementById('add').addEventListener('click', addTask);
+
+
+
+
+    function addTask(e){
+
+        e.preventDefault();
+
+        let inputFieldText = inputField.value;
+        let descFieldText = descField.value;
+        let dateFieldText = dateField.value;
+
+        let startBtn = el('button','Start', {className: 'green'});
+        let finishBtn = el('button','Finish', {className: 'orange'});
+        let deleteBtn = el('button','Delete', {className: 'red'});
+
+        let btnDiv = el('div',[
+            startBtn,
+            deleteBtn
+
+        ],{className: 'flex'})
+
+
+        if(inputFieldText.length>0 && descFieldText.length>0 && dateFieldText.length>0){
+
+            let domElement = el('article',[
+
+
+                el('h3',inputFieldText),
+                el('p',`Description: ${descFieldText}`),
+                el('p',`Due Date: ${dateFieldText}`),
+
+                btnDiv
+
+            ]);
+
+            openDiv.appendChild(domElement);
+
+            startBtn.addEventListener('click',()=>{
+
+                progressDiv.appendChild(domElement);
+                startBtn.remove();
+                btnDiv.appendChild(finishBtn);
+
+            })
+
+            deleteBtn.addEventListener('click',()=>{
+
+                domElement.remove();
+
+            })
+
+            finishBtn.addEventListener('click',()=>{
+
+                finishedDiv.appendChild(domElement);
+                btnDiv.remove();
+
+            })
+
+
+        }
+
+    }
+
+
+    function el(type,content,attributes){
+
+        const result = document.createElement(type);
+        
+        if(attributes!==undefined){
+        
+            Object.assign(result,attributes);
+        }
+        
+        if(Array.isArray(content)){
+        
+            content.forEach(append);
+        }
+        else{
+        
+            append(content);
+        }
+        
+        function append(node){
+        
+            if(typeof node==='string' || typeof node==='number'){
+        
+                node=document.createTextNode(node);
+            }
+            result.appendChild(node);
+        }
+        
+        return result;
+        
+        }
+    
+}
