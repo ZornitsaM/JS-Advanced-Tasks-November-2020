@@ -28,19 +28,15 @@ function solveClasses() {
             if (currentTask.priority == 'high') {
 
                 this.tasks.unshift(currentTask);
-
             }
 
             else {
 
                 this.tasks.push(currentTask);
-
-
             }
 
             return `Task id ${currentTask.id}, with ${currentTask.priority} priority, has been added.`
         }
-
 
         doTask() {
 
@@ -59,7 +55,6 @@ function solveClasses() {
 
         getSalary() {
 
-
             return `${this.firstName} ${this.lastName} has a salary of: ${this.baseSalary}`
         }
 
@@ -70,7 +65,6 @@ function solveClasses() {
             this.tasks.forEach(t => result.push(`${t.id}: ${t.taskName} - ${t.priority}`))
 
             return result.join('\n')
-
         }
     }
 
@@ -78,21 +72,18 @@ function solveClasses() {
 
     class Junior extends Developer {
 
-
         constructor(firstName, lastName, bonus, experience) {
 
             super(firstName, lastName);
             this.baseSalary += bonus; //todo
             this.tasks = [];
             this.experience = Number(experience)
-
         }
 
         learn(years) {
 
             this.experience += years
         }
-
     }
 
 
@@ -124,13 +115,8 @@ function solveClasses() {
                 curretnTask.priority = 'high';
                 this.tasks = this.tasks.filter(x => x !== curretnTask);
                 this.tasks.unshift(curretnTask);
-               
-
             }
-
             return curretnTask;
-
-           
         }
     }
 
