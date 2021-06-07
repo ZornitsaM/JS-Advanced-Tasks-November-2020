@@ -80,9 +80,7 @@ function solveClasses() {
             }
 
             return result.join('\n');
-
         }
-
     }
 
 
@@ -94,13 +92,10 @@ function solveClasses() {
 
             this.runningNeeds = runningNeeds;
             this.trainability = trainability;
-
-
         }
 
 
         feed() {
-
 
             return super.feed() + ', happy and wagging tail.';
         }
@@ -116,7 +111,6 @@ function solveClasses() {
 
             return result.join('\n');
         }
-
     }
 
     return{
@@ -124,7 +118,5 @@ function solveClasses() {
         Pet,
         Cat,
         Dog
-        
     }
-
 }

@@ -81,7 +81,6 @@ class VeterinaryClinic {
         this.currentWorkload--;
 
         return `Goodbye ${currentPet.petName}. Stay safe!`
-
     }
 
 
@@ -107,17 +106,10 @@ class VeterinaryClinic {
             for (const pet of client.pets) {
 
                 result.push(`---${pet.petName} - a ${pet.kind.toLowerCase()} that needs: ${pet.procedures.join(', ')}`)
-
             }
-
         }
-
-
         return result.join('\n');
-
     }
-
-
 }
 
 

@@ -27,14 +27,12 @@ class VeterinaryClinic {
             if (currentPet.procedures.length > 0) {
 
                 throw new Error(`This pet is already registered under ${currentOwner.ownerName} name! ${currentPet.petName} is on our lists, waiting for ${currentPet.procedures.join(', ')}.`)
-
             }
 
             else {
 
                 currentPet.procedures = procedures;
             }
-
         }
 
         else if (!currentOwner) {
@@ -48,21 +46,14 @@ class VeterinaryClinic {
             this.clients.push(currentOwner);
         }
 
-
-
-
         let pet = {
 
             petName,
             kind,
             procedures
-
         }
 
         currentOwner.pets.push(pet);
-
-
-
         this.currentWorkload++;
         return `Welcome ${petName}!`
 
@@ -76,7 +67,6 @@ class VeterinaryClinic {
         if (!currentClient) {
 
             throw new Error('Sorry, there is no such client!');
-
         }
 
         let pet = currentClient.pets.find(x => x.petName == petName);
@@ -84,7 +74,6 @@ class VeterinaryClinic {
         if (!pet || pet.procedures.length == 0) {
 
             throw new Error(`Sorry, there are no procedures for ${petName}!`)
-
         }
 
         let currentBill = pet.procedures.length * 500;
@@ -92,9 +81,6 @@ class VeterinaryClinic {
         pet.procedures = [];
         this.currentWorkload--;
         return `Goodbye ${pet.petName}. Stay safe!`
-
-
-
     }
 
     toString() {
@@ -104,7 +90,6 @@ class VeterinaryClinic {
         let percentages = Math.floor((this.currentWorkload / this.capacity) * 100);
         result.push(`${this.clinicName} is ${percentages}% busy today!`)
         result.push(`Total profit: ${this.totalProfit.toFixed(2)}$`)
-
 
 
         let sortedClients = this.clients.sort((a, b) => a.ownerName.localeCompare(b.ownerName));
@@ -120,9 +105,7 @@ class VeterinaryClinic {
                 result.push(`---${pet.petName} - a ${pet.kind.toLowerCase()} that needs: ${pet.procedures.join(', ')}`)
 
             }
-
         }
-
 
         return result.join('\n')
     }

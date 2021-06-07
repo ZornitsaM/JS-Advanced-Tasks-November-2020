@@ -107,10 +107,7 @@ function solveClasses(){
             result.push(`${this.name} is a dog with need of ${this.runningNeeds}km running every day and ${this.trainability} trainability.`)
 
             return result.join('\n')
-
         }
-
-
     }
 
     return {
@@ -119,7 +116,6 @@ function solveClasses(){
         Cat,
         Dog
     }
-
 }
 
 

@@ -88,9 +88,7 @@ class Parking{
 
                 }
                 result.push(`${car.carModel} == ${car.carNumber} - ${carStatusPay}`)
-                
             }
-
         }
 
         else{
@@ -104,17 +102,13 @@ class Parking{
             else{
 
                 carStatusPay='Not payed';
-
             }
 
             result.push(`${currentCar.carModel} == ${currentCar.carNumber} - ${carStatusPay}`)
         }
 
-
         return result.join('\n')
     }
-
-
 }
 
 
