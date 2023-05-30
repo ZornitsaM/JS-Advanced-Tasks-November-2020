@@ -24,15 +24,12 @@ function solve(input) {
         return curr[0].localeCompare(next[0]);
     })
 
-
     for (let i = 0; i < sorted.length; i++) {
         console.log(sorted[i][0]);
         let sortByName = sorted[i][1].sort((a,b)=>a.name.localeCompare(b.name));
         sortByName.forEach(x=>console.log(`${x.name}: ${x.price}`));
     }
-       
 }
-  
 
 solve([
     'Appricot : 20.4',

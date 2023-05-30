@@ -14,34 +14,23 @@ function solve(input) {
             result[car] = {};
             result[car].push(model, producedCar);
         }
-
         else {
 
             if (!result[car].includes(model)) {
 
                 result[car][model].push(producedCar);
-
             }
-
             else {
 
                 result[car][1]+=producedCar;
             }
-
         }
-
     });
 
-
-    
     Object.entries(result).forEach((a,b)=>{
-      
         console.log(a);
-
     })
-
 }
-
 
 solve([
     'Audi | Q7 | 1000',

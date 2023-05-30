@@ -10,7 +10,6 @@ function solve(){
     let descField = document.getElementById('description');
     let dateField = document.getElementById('date');
 
-
     document.getElementById('add').addEventListener('click', addTask);
 
     function addTask(e){
@@ -20,7 +19,6 @@ function solve(){
         let startButton = el('button','Start',{className: 'green'});
         let deleteButton = el('button','Delete',{className: 'red'});
         let finishButton = el('button','Finish',{className: 'orange'});
-        
 
         let divButtons = el('div',[
 
@@ -32,15 +30,12 @@ function solve(){
 
             let domElement = el('article',[
 
-
                 el('h3',inputField.value),
                 el('p',`Description: ${descField.value}`),
                 el('p',`Due Date: ${dateField.value}`),
 
                 divButtons
-
             ]);
-
 
             openDiv.appendChild(domElement);
 
@@ -49,50 +44,31 @@ function solve(){
                 progressDiv.appendChild(domElement);
                 startButton.remove();
                 divButtons.appendChild(finishButton);
-
             })
 
             deleteButton.addEventListener('click',()=>{
-
                 domElement.remove();
-
             })
-
 
             finishButton.addEventListener('click',()=>{
 
                 finishedDiv.appendChild(domElement);
                 divButtons.remove();
-                
-
-
-
             })
-
-
-
         }
-
-    
-
     }
-
 
     function el(type,content,attributes){
 
         const result = document.createElement(type);
         
         if(attributes!==undefined){
-        
             Object.assign(result,attributes);
         }
-        
         if(Array.isArray(content)){
-        
             content.forEach(append);
         }
         else{
-        
             append(content);
         }
         
@@ -104,9 +80,6 @@ function solve(){
             }
             result.appendChild(node);
         }
-        
         return result;
-        
         }
-    
 }

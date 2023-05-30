@@ -2,10 +2,8 @@
 function solution(num){
 
     return function (numTwo){
-
         return num+numTwo;
     }
-
 }
 
 let add5 = solution(5);

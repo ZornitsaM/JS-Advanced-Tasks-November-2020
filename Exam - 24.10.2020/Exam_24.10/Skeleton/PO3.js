@@ -26,7 +26,6 @@ class Parking{
         return `The ${carModel}, with a registration number ${carNumber}, parked.` //todo .carModel if case
     }
 
-
     removeCar(carNumber){
 
         let currentCar = this.vehicles.find(c=>c.carNumber==carNumber);
@@ -34,7 +33,6 @@ class Parking{
 
             throw new Error(`The car, you're looking for, is not found.`) //todo ' or `
         }
-
         if(currentCar.payed==false){
 
             throw new Error(`${currentCar.carNumber} needs to pay before leaving the parking lot.`)
@@ -44,7 +42,6 @@ class Parking{
         return `${currentCar.carNumber} left the parking lot.`
     }
 
-
     pay(carNumber){
 
         let currentCar = this.vehicles.find(c=>c.carNumber==carNumber);
@@ -53,7 +50,6 @@ class Parking{
 
             throw new Error(`${carNumber} is not in the parking lot.`)
         }
-
         if(currentCar.payed){
 
             throw new Error(`${currentCar.carNumber}'s driver has already payed his ticket.`)
@@ -81,9 +77,7 @@ class Parking{
 
                     carStatusPay='Has payed';
                 }
-
                 else{
-
                     carStatusPay='Not payed';
 
                 }
@@ -98,7 +92,6 @@ class Parking{
 
                 carStatusPay='Has payed';
             }
-
             else{
 
                 carStatusPay='Not payed';
@@ -106,11 +99,9 @@ class Parking{
 
             result.push(`${currentCar.carModel} == ${currentCar.carNumber} - ${carStatusPay}`)
         }
-
         return result.join('\n')
     }
 }
-
 
 const parking = new Parking(12);
 

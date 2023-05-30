@@ -10,17 +10,12 @@ function solve(input){
    
        if (!register[system]){
            register[system]={};
-   
        }
    
        if (!register[system][component]){
            register[system][component]=[];
-   
        }
-   
        register[system][component].push(subcomponent);
-  
-   
    });
     
    const sortedSystems = Object.keys(register).sort((a,b)=>Object.keys(register[b]).length-Object.keys(register[a]).length
@@ -36,15 +31,9 @@ function solve(input){
           
            console.log(`|||${component}`);
            register[system][component].forEach(x=>console.log(`||||||${x}`));
-   
        }
-   
    }
-   
-   
    }
-   
-  
    
    solve([
        'SULS | Main Site | Home Page',

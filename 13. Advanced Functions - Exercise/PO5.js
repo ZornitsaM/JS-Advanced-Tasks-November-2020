@@ -32,7 +32,6 @@ function solve() {
       fat: 0,
       flavour: 0
     };
-   
     
     const commands = {
       restock : (microelement, quantity) =>  {
@@ -53,7 +52,6 @@ function solve() {
         });
    
         return 'Success'
-   
       },
       report : () => Object.
                       entries(stocks).

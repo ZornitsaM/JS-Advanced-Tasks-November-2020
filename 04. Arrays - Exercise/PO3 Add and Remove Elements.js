@@ -1,5 +1,4 @@
 
-
 function solve(numbers) {
 
     let output = [];
@@ -7,19 +6,12 @@ function solve(numbers) {
 
     numbers.forEach(command => {
         if (command == "add") {
-
             output.push(count);
-
         }
-
         else if (command == "remove") {
-
             output.pop();
-
         }
-
         count++;
-
     });
 
     output.length==0 ? console.log('Empty') : console.log(output.join("\n"));
@@ -28,5 +20,4 @@ function solve(numbers) {
 solve(['remove',
     'remove',
     'remove']
-
 )

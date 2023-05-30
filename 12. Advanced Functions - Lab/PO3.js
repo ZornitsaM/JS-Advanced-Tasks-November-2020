@@ -13,22 +13,14 @@ function solve(input,criteria){
             console.log(`${i}. ${empl.first_name} ${empl.last_name} - ${empl.email}`)
         });
     }
-
     else{
 
         employees.forEach((empl,i) => {
             
             console.log(`${i}. ${empl.first_name} ${empl.last_name} - ${empl.email}`)
         });
-
-
     }
-  
-
-
-
 }
-
 
 solve(`[{
     "id": "1",
@@ -56,6 +48,4 @@ solve(`[{
     "gender": "Male"
   }]`,
  'last_name-Johnson'
-
-
 )

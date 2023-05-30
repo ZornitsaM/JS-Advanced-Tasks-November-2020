@@ -3,20 +3,17 @@ class VeterinaryClinic {
     constructor(clinicName, capacity) {
         this.clinicName = clinicName;
         this.capacity = capacity;
-        this.clients = [] //TODO nai otgore
+        this.clients = [] 
         this.totalProfit = 0;
         this.currentWorkload = 0;
     }
 
-
     newCustomer(ownerName, petName, kind, procedures) {
-
 
         if (this.capacity <= this.currentWorkload) {
 
             throw new Error('Sorry, we are not able to accept more patients!');
         }
-
 
         let currentOwner = this.clients.find(x => x.ownerName == ownerName);
 
@@ -25,12 +22,9 @@ class VeterinaryClinic {
             let pet = currentOwner.pets.find(x => x.petName === petName)
 
             if (pet.procedures.length > 0) {
-
                 throw new Error(`This pet is already registered under ${currentOwner.ownerName} name! ${pet.petName} is on our lists, waiting for ${pet.procedures.join(', ')}.`)
             }
-
             else {
-
                 pet.procedures = procedures;
             }
         }
@@ -41,10 +35,8 @@ class VeterinaryClinic {
                 ownerName,
                 pets: []
             }
-
             this.clients.push(currentOwner);
         }
-
 
         currentOwner.pets.push({
             petName,
@@ -53,11 +45,8 @@ class VeterinaryClinic {
         })
 
         this.currentWorkload++;
-
         return `Welcome ${petName}!`
-
     }
-
 
     onLeaving(ownerName, petName) {
 
@@ -83,7 +72,6 @@ class VeterinaryClinic {
         return `Goodbye ${currentPet.petName}. Stay safe!`
     }
 
-
     toString() {
 
         let result = [];
@@ -92,15 +80,11 @@ class VeterinaryClinic {
         result.push(`${this.clinicName} is ${percentage}% busy today!`);
         result.push(`Total profit: ${this.totalProfit.toFixed(2)}$`);
 
-
         this.clients.sort((a, b) => a.ownerName.localeCompare(b.ownerName));
-
 
         for (const client of this.clients) {
 
-
             client.pets.sort((a, b) => a.petName.localeCompare(b.petName));
-
 
             result.push(`${client.ownerName} with:`)
             for (const pet of client.pets) {

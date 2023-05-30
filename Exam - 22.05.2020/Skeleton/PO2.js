@@ -28,8 +28,6 @@ function solveClasses() {
 
                 throw new Error('Short reports content should be less then 150 symbols.');
             }
-
-
             if (!originalResearch.hasOwnProperty('title')
                 ||!originalResearch.hasOwnProperty('author')) {
 
@@ -37,15 +35,11 @@ function solveClasses() {
             }
 
             super(title, content);
-
             this.originalResearches = originalResearch;
-
             this.comments = [];
-
         }
 
         addComment(comment) {
-
             this.comments.push(comment);
             return 'The comment is added.'
         }
@@ -53,24 +47,17 @@ function solveClasses() {
         toString() {
 
             let result = [
-
                 super.toString(),
                 `Original Research: ${this.originalResearches.title} by ${this.originalResearches.author}`
-
             ]
 
             if (this.comments.length > 0) {
-
                 result.push('Comments:'),
                 this.comments.forEach(c => result.push(c)) //TODO
             }
-
-
             return result.join('\n');
         }
     }
-
-
 
     class BookReview extends Article {
 
@@ -93,41 +80,29 @@ function solveClasses() {
                 clientName,
                 orderDescription
             });
-
-
             return `${clientName} has ordered a review for ${this.book.name}`;
         }
-
 
         toString() {
 
             let result = [
-
                 super.toString(),
                 `Book: ${this.book.name}`
-
             ]
 
             if (this.clients.length > 0) {
-
                 result.push('Orders:')
                 this.clients.forEach(c => result.push(`${c.clientName} - ${c.orderDescription}`)) //TODO
             }
-
             return result.join('\n');
         }
-
     }
-
-
     return {
 
         Article,
         ShortReports,
         BookReview
     }
-
-
 }
 
 

@@ -1,9 +1,7 @@
 
-
 function magicMatrices(arr) {
 
     let sum = 0;
-
     arr[0].forEach(x => sum += x);
 
     for (let row = 1; row < arr.length; row++) {
@@ -18,6 +16,5 @@ function magicMatrices(arr) {
             colSum += arr[row][col];
         if (colSum != sum)	return false;
     }
-    
     return true;
 }

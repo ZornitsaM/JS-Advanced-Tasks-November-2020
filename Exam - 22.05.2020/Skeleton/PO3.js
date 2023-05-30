@@ -4,9 +4,7 @@ class Bank {
 
         this._bankName = bankName;
         this.allCustomers = [];
-
     }
-
 
     newCustomer(customer) {
 
@@ -19,7 +17,6 @@ class Bank {
         customer.transactions = [];
         this.allCustomers.push(customer)
         //return `{ firstName: "${customer.firstName}", lastName: "${customer.lastName}", personalId: ${customer.personalId} }`//todo
-
         return customer;
     }
 
@@ -28,14 +25,12 @@ class Bank {
         let customer = this.allCustomers.find(c => c.personalId == personalId);
 
         if (customer == undefined) {
-
             throw new Error('We have no customer with this ID!')
         }
 
         customer.totalMoney += amount;
         customer.transactions.unshift(`${customer.transactions.length+1}. ${customer.firstName} ${customer.lastName} made deposit of ${amount}$!`)
         return `${customer.totalMoney}$`
-
     }
 
     withdrawMoney(personalId, amount) {
@@ -46,31 +41,25 @@ class Bank {
 
             throw new Error('We have no customer with this ID!')
         }
-
         if (customer.totalMoney < amount) { //todo
 
             throw new Error(`${customer.firstName} ${customer.lastName} does not have enough money to withdraw that amount!`)
-
         }
 
         customer.totalMoney -= amount;
         customer.transactions.unshift(`${customer.transactions.length+1}. ${customer.firstName} ${customer.lastName} withdrew ${amount}$!`)
         return `${customer.totalMoney}$`
-
     }
-
 
     customerInfo(personalId) {
 
         let customer = this.allCustomers.find(c => c.personalId == personalId);
 
         if (customer == undefined) {
-
             throw new Error('We have no customer with this ID!');
         }
 
         let result = [
-
             `Bank name: ${this._bankName}`,
             `Customer name: ${customer.firstName} ${customer.lastName}`,
             `Customer ID: ${personalId}`,
@@ -78,11 +67,8 @@ class Bank {
             'Transactions:'
             
         ].concat(customer.transactions).join('\n');
-
-       
         return result;
     }
-
 }
 
 let bank = new Bank("SoftUni Bank");

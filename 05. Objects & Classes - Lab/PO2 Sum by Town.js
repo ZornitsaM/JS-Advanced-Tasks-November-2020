@@ -6,12 +6,10 @@ class Person {
         this.name = name;
         this.#currentAge=age;
     }
-
     get fullname(){
 
         return this.current;
     }
-
    get age(){
        return this.currentAge;
    }
@@ -20,29 +18,20 @@ class Person {
         if (value < 0) {
             return;
         }
-
         this.currentAge = value;
-
-
     }
 
     saySomething() {
-
         return `Hello, me name is ${this.name}`;
     }
 
     static talk(){
 
        return "bl";
-
     }
 }
 
 console.log(Person.talk());
-
-
-
-
 
 let person = new Person("Zorry");
 console.log(person.age==-1);

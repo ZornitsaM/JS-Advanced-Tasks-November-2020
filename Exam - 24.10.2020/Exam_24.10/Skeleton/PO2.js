@@ -2,9 +2,7 @@
 
 function solveClasses() {
 
-
     class Developer {
-
 
         constructor(firstName, lastName) {
 
@@ -17,7 +15,6 @@ function solveClasses() {
 
         addTask(id, taskName, priority) {
 
-
             let currentTask = {
 
                 id,
@@ -29,28 +26,22 @@ function solveClasses() {
 
                 this.tasks.unshift(currentTask);
             }
-
             else {
 
                 this.tasks.push(currentTask);
             }
-
             return `Task id ${currentTask.id}, with ${currentTask.priority} priority, has been added.`
         }
 
         doTask() {
 
             if (this.tasks.length > 0) {
-
                 let theHighestTaskPrior = this.tasks.shift();
                 return theHighestTaskPrior.taskName;
             }
-
             else {
                 return `${this.firstName}, you have finished all your tasks. You can rest now.`
-
             }
-
         }
 
         getSalary() {
@@ -68,12 +59,9 @@ function solveClasses() {
         }
     }
 
-
-
     class Junior extends Developer {
 
         constructor(firstName, lastName, bonus, experience) {
-
             super(firstName, lastName);
             this.baseSalary += bonus; //todo
             this.tasks = [];
@@ -81,37 +69,30 @@ function solveClasses() {
         }
 
         learn(years) {
-
             this.experience += years
         }
     }
 
-
     class Senior extends Developer {
 
         constructor(firstName, lastName, bonus, experience) {
-
             super(firstName, lastName);
             this.baseSalary += bonus;
             this.tasks = [];
             this.experience = Number(experience) + 5;
         }
 
-
         changeTaskPriority(taskId) {
 
             let curretnTask = this.tasks.find(t => t.id == taskId);
 
             if (curretnTask.priority == 'high') {
-
                 curretnTask.priority = 'low';
                 this.tasks = this.tasks.filter(x => x !== curretnTask);
                 this.tasks.push(curretnTask);
                 return curretnTask.priority;
             }
-
             else {
-
                 curretnTask.priority = 'high';
                 this.tasks = this.tasks.filter(x => x !== curretnTask);
                 this.tasks.unshift(curretnTask);
@@ -120,15 +101,12 @@ function solveClasses() {
         }
     }
 
-
     return {
-
         Developer,
         Junior,
         Senior
     }
 }
-
 
 let classes = solveClasses();
 const developer = new classes.Developer("George", "Joestar");

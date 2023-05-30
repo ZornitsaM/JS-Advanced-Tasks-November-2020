@@ -1,5 +1,4 @@
 
-
 function solve(input){
 
     const register = {};
@@ -10,17 +9,12 @@ function solve(input){
    
        if (!register[system]){
            register[system]={};
-   
        }
    
        if (!register[system][component]){
            register[system][component]=[];
-   
        }
-   
        register[system][component].push(subcomponent);
-  
-   
    });
     
    const sortedSystems = Object.keys(register).sort((a,b)=>Object.keys(register[b]).length-Object.keys(register[a]).length
@@ -29,71 +23,14 @@ function solve(input){
    for (const system of sortedSystems) {
           
        console.log(system);
-   
        const sortedComponents = Object.keys(register[system]).sort((a,b)=>register[system][b].length-register[system][a].length);
    
        for (const component of sortedComponents) {
-          
            console.log(`|||${component}`);
            register[system][component].forEach(x=>console.log(`||||||${x}`));
-   
        }
-   
    }
-   
-   
    }
-
-
-
-
-   
-// function solve(input) {
-
-//     let result = {};
-
-//     input.forEach(line => {
-
-//         let [systemName, componentName, subcomponentName] = line.split(' | ');
-
-//         if (!result[systemName]) {
-
-//             result[systemName] = {};
-//         }
-
-//         if (!result[systemName][componentName]) {
-
-//             result[systemName][componentName] = [];
-
-
-//         }
-
-//         result[systemName][componentName].push(subcomponentName);
-
-
-
-//     });
-
-//     Object.entries(result).sort((a, b) => {
-
-//         return Object.entries(b[1]).length - Object.entries(a[1]).length || a[0].localeCompare(b[0]);
-//     }).forEach(([system, components]) => {
-
-//         console.log(system);
-//         Object.entries(components).sort((curr, next) => {
-
-//             return next[1].length-curr[1].length;
-
-//         }).forEach(([componentName,subcomponentName])=>{
-//           console.log(`|||${componentName}`);
-//           subcomponentName.forEach(x=>console.log(`||||||${x}`))
-
-//         })
-//     }
-
-//     )
-
-// }
 
 solve([
     'SULS | Main Site | Home Page',

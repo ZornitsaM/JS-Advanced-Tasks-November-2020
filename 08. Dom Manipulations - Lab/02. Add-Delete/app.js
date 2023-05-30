@@ -1,6 +1,5 @@
 function addItem() {
 
-
     let whereToAtach = document.getElementById('items');
     let inputElement = document.getElementById('newText');
 
@@ -12,5 +11,4 @@ function addItem() {
     whereToAtach.appendChild = liElement;
 
     inputElement.value='';
-
 }

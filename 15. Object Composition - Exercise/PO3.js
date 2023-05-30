@@ -18,7 +18,6 @@ function solve(input){
         volume=3500;
     }
 
-
     let obj = {
 
         model,
@@ -26,7 +25,6 @@ function solve(input){
 
             'power': power,
             'volume': volume
-            
         },
 
         carriage: {
@@ -36,16 +34,8 @@ function solve(input){
         },
 
         wheels: [wheelsize,wheelsize,wheelsize,wheelsize],
-        
     }
-
-
     return obj;
-    //console.log(obj);
-
-
-
-
 }
 
 solve({ model: 'Opel Vectra',
@@ -53,5 +43,4 @@ power: 110,
 color: 'grey',
 carriage: 'coupe',
 wheelsize: 17 }
-
 )

@@ -10,15 +10,11 @@ function solve() {
     let btnDiv = administartionDiv.querySelectorAll('div')[3];
     let btn = btnDiv.querySelector('button')
 
-
-
     let inputType = lectureNameDiv.querySelector('input');
     let dateType = dateNameDiv.querySelector('input');
     let moduleTypes = moduleNameDiv.querySelector('select');
 
-
     btn.addEventListener('click', addTask);
-
 
     function addTask(e) {
 
@@ -29,15 +25,11 @@ function solve() {
         let modulText = moduleTypes.value;
 
         if(inputText!='' && dateText!=''&& modulText!='Select module'){
-
-
             modulText = (moduleTypes.value).toUpperCase();
             let onlyDate = dateText.split('T')[0];
             let onlyHour = dateText.split('T')[1];
-            
     
             let splittedDate = onlyDate.split('-')
-    
     
             let divElement = document.createElement('div');
             let h3Element = document.createElement('h3');
@@ -59,10 +51,8 @@ function solve() {
            
             ulElement.appendChild(liElement);
             
-    
             divElement.appendChild(h3Element);
             divElement.appendChild(ulElement);
-    
     
             trainingDiv.appendChild(divElement);
     
@@ -70,25 +60,14 @@ function solve() {
             dateType.value=''
             moduleTypes.value=''
     
-    
             buttonElement.addEventListener('click', () => {
-    
                 
                 liElement.remove();
 
                 if(divElement.childElementCount==2){
-
                     divElement.remove();
                 }
-
-
-    
-    
             })
-
         }
-       
     }
-
-
 };

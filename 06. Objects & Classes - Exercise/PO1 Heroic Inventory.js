@@ -11,11 +11,8 @@ function solve(input) {
 
         let hero = { name, level, items };
         heroes.push(hero);
-
     });
-
     console.log(JSON.stringify(heroes))
-
 }
 
 solve(['Isacc / 25 / Apple, GravityGun',

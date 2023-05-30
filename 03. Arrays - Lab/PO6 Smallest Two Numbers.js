@@ -1,5 +1,4 @@
 
-
 function solve(numbers){
 
     let result = numbers
@@ -7,7 +6,6 @@ function solve(numbers){
     .splice(0,2);
 
     console.log(result.join(" "));
-    
 }
 
 solve([30, 15, 50, 5])

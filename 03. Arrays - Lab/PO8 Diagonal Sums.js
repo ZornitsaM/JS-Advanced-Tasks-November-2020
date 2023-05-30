@@ -1,13 +1,9 @@
 
-
-
 function solve(numbers){
 
-    
      let result = [];
      let sumFirst = 0;
      let sumSecond = 0;
-    
 
      for (let i = 0; i < numbers.length; i++) {
          
@@ -16,12 +12,9 @@ function solve(numbers){
         for (let j = 0; j < currentRow.length; j++) {
 
             if (i==j){
-
                 sumFirst+=currentRow[j];
             }
-            
         }
-         
      }
 
      let reversedArr = numbers.reverse();
@@ -33,20 +26,14 @@ function solve(numbers){
         for (let j = 0; j < currentRow.length; j++) {
 
             if (i==j){
-
                 sumSecond+= currentRow[j];
             }
-            
         }
-         
      }
-
 
      result.push(sumFirst);
      result.push(sumSecond);
      console.log(result.join(" "));
- 
-
 }
 
 solve([[3, 5, 17],

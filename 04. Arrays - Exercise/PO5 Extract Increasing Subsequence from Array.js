@@ -7,16 +7,13 @@ function solve(input) {
     input.forEach(element => {
 
         if (element >= max) {
-
             max = element;
             console.log(max);
         }
     });
 
     console.log(output.join("\n"))
-
 }
-
 
 solve([1,
     3,

@@ -9,5 +9,4 @@ function subtract() {
     let resultNumber = document.getElementById('result');
     resultNumber.innerHTML=firstNumber-secondNumber;
     console.log(resultNumber.innerText)
- 
 }

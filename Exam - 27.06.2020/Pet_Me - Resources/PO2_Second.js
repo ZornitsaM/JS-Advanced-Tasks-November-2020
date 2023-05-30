@@ -1,5 +1,4 @@
 
-
 function solveClasses(){
 
     class Pet{
@@ -10,7 +9,6 @@ function solveClasses(){
             this.name=name;
             this.comments=[];
         }
-
 
         addComment(comment){
 
@@ -23,12 +21,10 @@ function solveClasses(){
             return "Comment is added."
         }
 
-
         feed(){
 
             return `${this.name} is fed`
         }
-
 
         toString(){
 
@@ -40,26 +36,21 @@ function solveClasses(){
 
                 result.push(`Special requirements: ${this.comments.join(', ')}`);
             }
-
             return result.join('\n')
         }
-
     }
 
     class Cat extends Pet{
 
         constructor(owner, name, insideHabits, scratching){
-
             super(owner, name);
             this.insideHabits=insideHabits;
             this.scratching=scratching;
         }
 
         feed(){
-
             return super.feed() + ', happy and purring.';
         }
-
 
         toString(){
 
@@ -70,18 +61,12 @@ function solveClasses(){
             result.push(`${this.name} is a cat with ${this.insideHabits}`)
 
             if(this.scratching){
-
                 result.pop();
                 result.push(`${this.name} is a cat with ${this.insideHabits}, but beware of scratches.`)
             }
-
-
             return result.join('\n')
-
         }
-
     }
-
 
     class Dog extends Pet{
 
@@ -97,7 +82,6 @@ function solveClasses(){
             return super.feed() + ', happy and wagging tail.';
         }
 
-
         toString(){
 
             let result=[];
@@ -111,13 +95,11 @@ function solveClasses(){
     }
 
     return {
-
         Pet,
         Cat,
         Dog
     }
 }
-
 
 let classes = solveClasses();
 let pet = new classes.Pet('Ann', 'Merry');

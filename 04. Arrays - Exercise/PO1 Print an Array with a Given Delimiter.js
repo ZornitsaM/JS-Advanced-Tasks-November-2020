@@ -1,10 +1,7 @@
 
-
 function solve(input){
 
-
     let symbol = input.pop();
-
     console.log(input.join(symbol));
 } 
 

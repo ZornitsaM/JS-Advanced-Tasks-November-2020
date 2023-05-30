@@ -1,5 +1,4 @@
 
-
 function solve(input) {
 
     let jsonData = input.shift();
@@ -16,8 +15,6 @@ function solve(input) {
     html += '</table>';
 
     return html;
-
 }
-
 
 solve(['[{"Name":"Tomatoes & Chips","Price":2.35},{"Name":"J&B Chocolate","Price":0.96}]'])

@@ -1,16 +1,13 @@
 function solve(descriptor){
 
-    
     const engines = [
 
         { power: 90, volume: 1800 },
         { power: 120, volume: 2400 },
         { power: 200, volume: 3500 },
-    
     ]
 
     let car = {
-
 
         model: descriptor.model,
         carriage: {
@@ -18,7 +15,6 @@ function solve(descriptor){
             color: descriptor.color
         }
     }
-
 
     for (const engine of engines) {
         
@@ -29,33 +25,25 @@ function solve(descriptor){
         }
     }
 
-
     if (descriptor.wheelsize%2==0){
 
         const wheelsize = descriptor.wheelsize-1;
         car.wheels=[wheelsize,wheelsize,wheelsize,wheelsize]
-
     }
 
     else{
         
         const wheelsize = descriptor.wheelsize;
         car.wheels=[wheelsize,wheelsize,wheelsize,wheelsize]
-
     }
 
     console.log(car);
-    //return car;
-
 }
-
-
 
 solve({ model: 'Opel Vectra',
 power: 110,
 color: 'grey',
 carriage: 'coupe',
 wheelsize: 17 }
-
 )
 

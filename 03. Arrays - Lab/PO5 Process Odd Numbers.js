@@ -1,5 +1,4 @@
 
-
 function solve(numbers){
 
     let output = [];
@@ -7,11 +6,8 @@ function solve(numbers){
     for (let i = 0; i < numbers.length; i++) {
         
         if (i%2!=0){
-
             output.push(numbers[i]);
-
         }
-
     }
 
     let finalResult = output
@@ -19,7 +15,6 @@ function solve(numbers){
     .reverse();
 
    console.log(finalResult.join(" "));
-
 }
 
 solve([10, 15, 20, 25])

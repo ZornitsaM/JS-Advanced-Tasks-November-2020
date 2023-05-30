@@ -9,34 +9,21 @@ function Person(name,email){
 
         return `${typeOf(this)} (name: ${this.name}, email: ${this.email})`
     }
-
 }
-class Teacher extends Person{
 
+class Teacher extends Person{
     super(subject){
 
         this.subject = this.subject;
-
     }
 }
 
-
 class Student extends Person{
-
     super()
 }
-
-
-
-
-
     return {
-
         Person,
         Teacher
     }
-
-
-
 }
 
