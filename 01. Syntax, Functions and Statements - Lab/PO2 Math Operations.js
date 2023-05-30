@@ -32,6 +32,5 @@ function solve(numberOne, numberTwo, operator){
         result=numberOne**numberTwo;
 
     }
-
     console.log(result);
 }

@@ -12,6 +12,5 @@ sumLenght=firstWordLenght+secondWordLenght+thirdWord;
 averageSum=Math.floor(sumLenght/3);
 console.log(sumLenght);
 console.log(averageSum);
-
 }
 

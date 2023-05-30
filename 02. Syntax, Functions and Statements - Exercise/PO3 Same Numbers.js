@@ -16,9 +16,7 @@ function solve(number) {
         lastDigit = current;
         sum += current;
         number= Math.floor(number/10);
-
     }
-
     console.log(equal);
     console.log(sum)
 }

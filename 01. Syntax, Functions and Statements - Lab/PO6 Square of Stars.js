@@ -1,5 +1,3 @@
-
-
 function solve (a) {
 
     if (a) {
@@ -7,22 +5,14 @@ function solve (a) {
         for (let i = 0; i < a; i++) {
 
             console.log('* '.repeat(a));
-
         }
-
     } 
     else {
 
         for (let i = 0; i < 5; i++) {
 
             console.log('* '.repeat(a));
-
         }
-
     }
-
-
 }
-
-
 //solve(6);

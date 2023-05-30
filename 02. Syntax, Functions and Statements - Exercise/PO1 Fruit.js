@@ -7,6 +7,5 @@ function solve(a,b,c){
     
     let output = `I need $${finalPrice} to buy ${weight.toFixed(2)} kilograms ${a}.`;
     console.log(output)
-
 }
 
